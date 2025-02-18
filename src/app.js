@@ -17,4 +17,11 @@ app.use(express.static("public")) //used for storing the image,pdf,etc
 app.use(cookieParser())  //user ke browser ka cookies access and set kar pau and then crud operation perform kar saku
 
 
+
+import router from "./routes/user.route.js"
+
+
+app.use("/api/v1/users", userRouter)
+
+
 export default app

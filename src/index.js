@@ -1,13 +1,17 @@
 
 import dotenv from "dotenv"
 import connectDB from "./db/index.js"
+import express from "express"
 
 
 dotenv.config({
   path:"/.env"
 })
 
-
+const app=express();
+// app.get("/",(req,res)=>{
+//   res.send("hello")
+// })
 connectDB()
 .then(()=>{
   app.listen(process.env.PORT||3000,()=>{
