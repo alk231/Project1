@@ -4,10 +4,11 @@ import cookieParser from "cookie-parser"
 
 const app=express()
 
-app.use(cors({
-  origin:process.env.CORS_ORIGIN,
-  credentials:true
-}))
+app.use(cors(//{
+//   // origin:process.env.CORS_ORIGIN,
+//   // credentials:true
+// }
+))
 
 app.use(express.json({limit:"16kb"}))  //used for getting the json file
 
@@ -18,9 +19,9 @@ app.use(cookieParser())  //user ke browser ka cookies access and set kar pau and
 
 
 
-import router from "./routes/user.route.js"
+import userRouter from "./src/routes/user.route.js";
 
-
+console.log("User router loaded");
 app.use("/api/v1/users", userRouter)
 
 
